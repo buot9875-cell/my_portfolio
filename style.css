@@ -364,6 +364,11 @@ section, [id] { scroll-margin-top: calc(var(--header-h, 0px) + 12px); }
   .back-to-top.is-visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
 }
 
+.about-stat .num {
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
 @media (min-width: 1024px) {
   .hero { padding-top: 90px; }
   .hero-content { position: static; }
