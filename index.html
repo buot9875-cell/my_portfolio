@@ -4,27 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Тимофей | Создание Telegram-ботов под ключ</title>
-  <meta name="description" content="Разрабатываю умных Telegram-ботов для бизнеса: от онлайн-записи до интеграции с ИИ и платежами. Решаю задачи автоматизации." />
+  <meta name="description" content="Разрабатываю умных Telegram-ботов для бизнеса: от онлайн-записи до интеграции с ИИ и платежами." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   
-  <!-- GSAP + ScrollTrigger -->
   <script src="https://unpkg.com/gsap@3/dist/gsap.min.js" defer></script>
   <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js" defer></script>
-  <!-- Lenis Smooth Scroll -->
   <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/bundled/lenis.min.js" defer></script>
 </head>
 <body>
-  <!-- Background cursor glow -->
   <div class="cursor-glow" aria-hidden="true"></div>
-
-  <!-- Cursor -->
   <div class="cursor"></div>
 
-  <!-- Header -->
+  <!-- Анимированные облака -->
+  <div class="cloud cloud-1"></div>
+  <div class="cloud cloud-2"></div>
+  <div class="cloud cloud-3"></div>
+
   <header class="site-header" data-animate>
     <div class="container row between center">
       <a href="#home" class="brand" aria-label="Тимофей home">
@@ -36,7 +35,7 @@
         <a href="#about" class="nav-link">Обо мне</a>
         <a href="#contact" class="nav-link">Контакты</a>
       </nav>
-      <button class="theme-toggle" type="button" aria-label="Переключить тему" title="Переключить тему" aria-pressed="false">
+      <button class="theme-toggle" type="button" aria-label="Переключить тему" aria-pressed="false">
         <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Zm0-16a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1Zm0 16a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1Zm10-7a1 1 0 0 1-1 1h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1ZM4 12a1 1 0 0 1-1 1H2a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1Zm14.95 6.536a1 1 0 0 1-1.414 1.414l-.707-.707a1 1 0 1 1 1.414-1.414l.707.707ZM6.464 6.464A1 1 0 1 1 5.05 5.05l.707-.707A1 1 0 0 1 7.17 5.757l-.707.707Zm11.314-2.121a1 1 0 0 1 0 1.414l-.707.707A1 1 0 1 1 15.657 5.05l.707-.707a1 1 0 0 1 1.414 0ZM7.171 18.243a1 1 0 0 1 0 1.414l-.707.707A1 1 0 0 1 5.05 18.95l.707-.707a1 1 0 0 1 1.414 0Z"/></svg>
         <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 1 0 9.79 9.79Z"/></svg>
         <span class="toggle-label">Тема</span>
@@ -44,45 +43,49 @@
     </div>
   </header>
 
-  <!-- Hero -->
   <section id="home" class="hero" data-animate>
     <div class="container hero-content">
       <div class="hero-eyebrow">Telegram-боты под ключ</div>
       <div class="hero-title-wrap">
         <h1 class="hero-title">Автоматизирую бизнес с помощью умных Telegram‑ботов</h1>
       </div>
-      <p class="hero-sub">Создаю ботов, которые решают реальные задачи: онлайн-запись, автоматические продажи, консультации с ИИ, интеграция с любыми сервисами. Работаю на результат.</p>
+      <p class="hero-sub">Создаю ботов, которые решают реальные задачи: онлайн-запись, автоматические продажи, консультации с ИИ, интеграция с любыми сервисами.</p>
       <div class="hero-cta row">
         <a href="#work" class="btn btn-primary">Мои работы</a>
         <a href="#contact" class="btn btn-ghost">Заказать бота</a>
       </div>
     </div>
 
-    <!-- Hero marquee -->
     <div class="marquee" aria-hidden="true">
       <div class="marquee-track">
         <span>автоматизация</span><span>telegram‑боты</span><span>искусственный интеллект</span><span>онлайн‑запись</span>
         <span>платежи</span><span>чат‑боты</span><span>python</span><span>aiogram</span>
         <span>автоматизация</span><span>telegram‑боты</span><span>искусственный интеллект</span><span>онлайн‑запись</span>
-        <span>платежи</span><span>чат‑боты</span><span>python</span><span>aiogram</span>
       </div>
     </div>
+
+    <svg class="hero-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path fill="url(#waveGradient)" fill-opacity="1" d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
+      <defs>
+        <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0.25" />
+          <stop offset="100%" style="stop-color:#0ea5e9;stop-opacity:0.08" />
+        </linearGradient>
+      </defs>
+    </svg>
   </section>
 
-  <!-- Work -->
   <section id="work" class="work" data-animate>
     <div class="container">
       <div class="section-head row between end">
         <h2 class="section-title">Мои работы</h2>
         <span class="section-note">Кейсы и проекты</span>
       </div>
-
       <div class="cases">
-        <!-- Case item 1 -->
-        <div class="case" data-preview="#8A2BE2" data-label="Telegram-бот с AI">
+        <div class="case" data-preview="#00d4ff" data-label="Telegram-бот для записи">
           <button class="case-toggle" type="button" aria-expanded="false" aria-controls="case-1">
             <div class="case-left">
-              <div class="case-title">Бот для записи на услуги красоты</div>
+              <div class="case-title">Бот для записи на ресницы и бровки</div>
               <div class="case-tags">Python · Aiogram · SQLite · Админ‑панель</div>
             </div>
             <div class="case-arrow" aria-hidden="true">
@@ -90,35 +93,34 @@
             </div>
           </button>
           <div class="case-extra" id="case-1" hidden>
-            <p>Бот с календарём, выбором услуг и времени, автоматическим подтверждением и напоминаниями. Админ-панель для управления записями и рассылок. Полная автоматизация записи для салона красоты.</p>
-            <a class="btn btn-primary" href="my_project/bot-screenshot.jpg" data-transition="case">Подробнее о кейсе</a>
+            <p>Бот с календарём, выбором услуг и времени, админ-панелью, предоплатой и автоматическими уведомлениями. Полная автоматизация для мастера красоты.</p>
+            <a class="btn btn-primary" href="#" data-transition="case">Подробнее о кейсе</a>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-    
-
-  <!-- Services -->
   <section id="services" class="services" data-animate>
     <div class="container">
       <div class="section-head row between end">
         <h2 class="section-title">Мои услуги</h2>
         <span class="section-note">Что вы получите</span>
       </div>
-
       <div class="service-grid">
         <div class="service">
           <div class="service-head row between center">
             <h3 class="service-title">Боты под любые задачи</h3>
             <span class="service-index">01</span>
           </div>
-          <p class="service-text">Онлайн-запись, консультации с ИИ, каталоги с оплатой, справочники, уведомления, анкетирование. Автоматизирую процессы продаж и поддержки клиентов.</p>
+          <p class="service-text">Онлайн-запись, консультации с ИИ, каталоги с оплатой, уведомления, анкетирование. Автоматизирую процессы продаж.</p>
         </div>
         <div class="service">
           <div class="service-head row between center">
             <h3 class="service-title">Интеграции и админ‑панель</h3>
             <span class="service-index">02</span>
           </div>
-          <p class="service-text">Подключаю ботов к базам данных, CRM, платежным системам (ЮKassa, Telegram Stars), Google Sheets, ChatGPT и другим API. Сделаю понятную админ-панель.</p>
+          <p class="service-text">Подключаю ботов к базам данных, CRM, платежным системам, Google Sheets, ChatGPT и другим API. Сделаю понятную админ-панель.</p>
         </div>
         <div class="service">
           <div class="service-head row between center">
@@ -131,39 +133,26 @@
     </div>
   </section>
 
-  <!-- About -->
   <section id="about" class="about" data-animate>
     <div class="container two-col">
       <div class="about-col">
         <h2 class="section-title">Мой подход к работе</h2>
-        <p>Я Тимофей, создаю Telegram-ботов, которые реально помогают бизнесу. Моя цель — не просто написать код, а сделать инструмент, который будет приносить пользу: экономить ваше время, привлекать клиентов, автоматизировать продажи.</p>
-        <p>Перед началом работы всегда погружаюсь в задачу, предлагаю несколько вариантов решения. Работаю прозрачно: от обсуждения до запуска, тестирования и поддержки. Вы получаете полностью готового бота и инструкцию.</p>
+        <p>Я Тимофей, создаю Telegram-ботов, которые реально помогают бизнесу. Моя цель — не просто написать код, а сделать инструмент, который будет приносить пользу: экономить время, привлекать клиентов, автоматизировать продажи.</p>
+        <p>Перед началом работы погружаюсь в задачу, предлагаю варианты. Работаю прозрачно: от обсуждения до запуска, тестирования и поддержки.</p>
       </div>
       <div class="about-col about-card">
         <div class="about-stat">
-          <div class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" focusable="false">
-              <path d="M10 4h4a2 2 0 0 1 2 2v1h2.5A1.5 1.5 0 0 1 20 8.5v9A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5v-9A1.5 1.5 0 0 1 5.5 7H8V6a2 2 0 0 1 2-2Zm0 3h4V6h-4v1Z"/>
-            </svg>
-          </div>
+          <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M10 4h4a2 2 0 0 1 2 2v1h2.5A1.5 1.5 0 0 1 20 8.5v9A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5v-9A1.5 1.5 0 0 1 5.5 7H8V6a2 2 0 0 1 2-2Zm0 3h4V6h-4v1Z"/></svg></div>
           <div class="num">10+</div>
           <div class="label">Успешных проектов</div>
         </div>
         <div class="about-stat">
-          <div class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" focusable="false">
-              <path d="M6 2a1 1 0 0 0-1 1v1H4a2 2 0 0 0-2 2v2h20V6a2 2 0 0 0-2-2h-1V3a1 1 0 1 0-2 0v1H7V3a1 1 0 0 0-1-1ZM22 10H2v8a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-8Zm-6.293 3.293a1 1 0 0 1 1.414 1.414l-3.5 3.5a1 1 0 0 1-1.414 0l-1.5-1.5a1 1 0 1 1 1.414-1.414l.793.793 2.793-2.793Z"/>
-            </svg>
-          </div>
+          <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2a1 1 0 0 0-1 1v1H4a2 2 0 0 0-2 2v2h20V6a2 2 0 0 0-2-2h-1V3a1 1 0 1 0-2 0v1H7V3a1 1 0 0 0-1-1ZM22 10H2v8a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-8Z"/></svg></div>
           <div class="num">1 год</div>
           <div class="label">Активной разработки</div>
         </div>
         <div class="about-stat">
-          <div class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" focusable="false">
-              <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.707 7.293a1 1 0 0 1 0 1.414l-5 5a1 1 0 0 1-1.414 0l-2-2a1 1 0 1 1 1.414-1.414l1.293 1.293 4.293-4.293a1 1 0 0 1 1.414 0Z"/>
-            </svg>
-          </div>
+          <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Z"/></svg></div>
           <div class="num">24/7</div>
           <div class="label">Готовность на связи</div>
         </div>
@@ -171,49 +160,43 @@
     </div>
   </section>
 
-  <!-- Contact -->
   <section id="contact" class="contact" data-animate>
     <div class="container">
       <div class="contact-card">
         <h2 class="section-title">Давайте обсудим вашего бота?</h2>
-        <p>Расскажите о своей задаче, и я предложу решение, оценю сроки и стоимость. Отвечаю быстро — обычно в течение нескольких часов.</p>
+        <p>Расскажите о своей задаче, и я предложу решение, оценю сроки и стоимость. Отвечаю быстро.</p>
         <div class="contact-actions row">
-          <a class="btn btn-primary" target="_blank" href="https://t.me/panda_creator1">Написать в Telegram</a>
-          <a class="btn btn-ghost" href="mailto:buot9875@gmail.com">Написать на почту</a>
-          <a class="btn btn-ghost" target="_blank" href="https://github.com/buot9875-cell">Посмотреть код на GitHub</a>
+          <a class="btn btn-primary" target="_blank" href="https://t.me/timofey_bot_developer">Написать в Telegram</a>
+          <a class="btn btn-ghost" href="mailto:timofey@example.com">Написать на почту</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <div class="page-transition" aria-hidden="true"></div>
 
   <footer class="footer">
     <div class="container row between center">
-      <div class="brand tiny">TM</div>
+      <div class="brand tiny">T</div>
       <div class="foot-note">© 2026 — Тимофей. Разработка Telegram-ботов</div>
     </div>
   </footer>
 
-  <button class="back-to-top" aria-label="Наверх" title="Наверх" hidden>
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41Z" fill="currentColor"/></svg>
+  <button class="back-to-top" aria-label="Наверх" hidden>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41Z" fill="currentColor"/></svg>
   </button>
 
   <script src="script.js" defer></script>
   <script>
-    // Back-to-top visibility on mobile
     (function(){
       const btn = document.querySelector('.back-to-top');
       if (!btn) return;
       function onScroll(){
-        const y = window.scrollY || window.pageYOffset;
-        const isMobile = window.matchMedia('(max-width: 768px)').matches;
-        if (isMobile && y > 400) { btn.hidden = false; btn.classList.add('is-visible'); }
+        const y = window.scrollY;
+        if (y > 400) { btn.hidden = false; btn.classList.add('is-visible'); }
         else { btn.classList.remove('is-visible'); btn.hidden = true; }
       }
       window.addEventListener('scroll', onScroll, { passive: true });
-      window.addEventListener('resize', onScroll);
       onScroll();
       btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     })();
