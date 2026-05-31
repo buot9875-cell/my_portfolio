@@ -321,4 +321,33 @@ window.addEventListener('DOMContentLoaded', () => {
      navigateWithTransition(link.href)
    })
  })
+  // Анимация цифр в статистике
+const statNumbers = document.querySelectorAll('.about-stat .num');
+const animateNumber = (el) => {
+  const target = parseInt(el.innerText);
+  let current = 0;
+  const increment = target / 50;
+  const updateNumber = () => {
+    current += increment;
+    if (current < target) {
+      el.innerText = Math.ceil(current);
+      requestAnimationFrame(updateNumber);
+    } else {
+      el.innerText = target;
+    }
+  };
+  updateNumber();
+};
+
+const observerStats = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const numEl = entry.target;
+      animateNumber(numEl);
+      observerStats.unobserve(numEl);
+    }
+  });
+}, { threshold: 0.5 });
+
+statNumbers.forEach(num => observerStats.observe(num));
 })
