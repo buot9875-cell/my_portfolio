@@ -326,7 +326,7 @@ const statNumbers = document.querySelectorAll('.about-stat .num');
 const animateNumber = (el) => {
   const target = parseInt(el.innerText);
   let current = 0;
-  const increment = target / 50;
+  const increment = target / 20;
   const updateNumber = () => {
     current += increment;
     if (current < target) {
