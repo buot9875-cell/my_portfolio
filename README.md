@@ -4,17 +4,24 @@
 
 
 
-взято у Сабира:
+взято за основу у Сабира:
 ## 📞 Контакты
 
 - **Email**: sabir.dev@example.com
 - **Telegram**: [@sabirbiy](https://t.me/sabirbiy)  
-- **GitHub**: [github.com/sabirbiy](https://github.com/sabirbiy)
+
+
+
+
+
+
+
+## 📞 Контакты
+
+- **Email**: buot9875@gmail.com
+- **Telegram**: [@panda_creator1](https://t.me/panda_creator1)
+
 
 ## 📄 Лицензия
 
 Проект создан для личного использования. Код можно использовать как основу для собственного портфолио.
-
----
-
-**Создано с вниманием к деталям и любовью к минимализму** 🖤
