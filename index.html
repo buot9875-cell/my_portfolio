@@ -3,203 +3,155 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Тимофей | Создание Telegram-ботов под ключ</title>
-  <meta name="description" content="Разрабатываю умных Telegram-ботов для бизнеса: от онлайн-записи до интеграции с ИИ и платежами." />
+  <title>Тимофей | Telegram-боты на заказ</title>
+  <meta name="description" content="Разрабатываю Telegram-ботов для бизнеса: запись, продажи, консультации с ИИ. Быстро, надёжно, с душой." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-  
-  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js" defer></script>
-  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js" defer></script>
-  <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/bundled/lenis.min.js" defer></script>
 </head>
 <body>
-  <div class="cursor-glow" aria-hidden="true"></div>
-  <div class="cursor"></div>
 
-  <!-- Анимированные облака -->
-  <div class="cloud cloud-1"></div>
-  <div class="cloud cloud-2"></div>
-  <div class="cloud cloud-3"></div>
+  <!-- Вертикальная бегущая строка справа -->
+  <div class="vertical-marquee">
+    <div class="vertical-marquee-track">
+      <span>telegram‑боты</span>
+      <span>автоматизация</span>
+      <span>aiogram</span>
+      <span>python</span>
+      <span>онлайн‑запись</span>
+      <span>чат‑боты</span>
+      <span>telegram‑боты</span>
+      <span>автоматизация</span>
+      <span>aiogram</span>
+      <span>python</span>
+      <span>онлайн‑запись</span>
+    </div>
+  </div>
 
-  <header class="site-header" data-animate>
-    <div class="container row between center">
-      <a href="#home" class="brand" aria-label="Тимофей home">
-        <span class="brand-mark" aria-hidden="true">T</span>
-      </a>
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">T</div>
       <nav class="nav">
-        <a href="#work" class="nav-link">Работы</a>
-        <a href="#services" class="nav-link">Услуги</a>
-        <a href="#about" class="nav-link">Обо мне</a>
-        <a href="#contact" class="nav-link">Контакты</a>
+        <a href="#work">Проекты</a>
+        <a href="#services">Что делаю</a>
+        <a href="#about">Коротко</a>
+        <a href="#contact">Связь</a>
       </nav>
-      <button class="theme-toggle" type="button" aria-label="Переключить тему" aria-pressed="false">
-        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Zm0-16a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1Zm0 16a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1Zm10-7a1 1 0 0 1-1 1h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1ZM4 12a1 1 0 0 1-1 1H2a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1Zm14.95 6.536a1 1 0 0 1-1.414 1.414l-.707-.707a1 1 0 1 1 1.414-1.414l.707.707ZM6.464 6.464A1 1 0 1 1 5.05 5.05l.707-.707A1 1 0 0 1 7.17 5.757l-.707.707Zm11.314-2.121a1 1 0 0 1 0 1.414l-.707.707A1 1 0 1 1 15.657 5.05l.707-.707a1 1 0 0 1 1.414 0ZM7.171 18.243a1 1 0 0 1 0 1.414l-.707.707A1 1 0 0 1 5.05 18.95l.707-.707a1 1 0 0 1 1.414 0Z"/></svg>
-        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 1 0 9.79 9.79Z"/></svg>
-        <span class="toggle-label">Тема</span>
-      </button>
     </div>
   </header>
 
-  <section id="home" class="hero" data-animate>
-    <div class="container hero-content">
-      <div class="hero-eyebrow">Telegram-боты под ключ</div>
-      <div class="hero-title-wrap">
-        <h1 class="hero-title">Автоматизирую бизнес с помощью умных Telegram‑ботов</h1>
+  <main>
+    <!-- ГЛАВНЫЙ ЭКРАН -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-badge">⚡ Telegram-боты под ключ</div>
+        <h1>Автоматизирую бизнес <br>с помощью <span class="neon">умных ботов</span></h1>
+        <p class="hero-desc">Запись, продажи, консультации с ИИ — сделаю бота, который решает ваши задачи.</p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-primary">Заказать бота</a>
+          <a href="#work" class="btn btn-outline">Мои проекты</a>
+        </div>
       </div>
-      <p class="hero-sub">Создаю ботов, которые решают реальные задачи: онлайн-запись, автоматические продажи, консультации с ИИ, интеграция с любыми сервисами.</p>
-      <div class="hero-cta row">
-        <a href="#work" class="btn btn-primary">Мои работы</a>
-        <a href="#contact" class="btn btn-ghost">Заказать бота</a>
-      </div>
-    </div>
+    </section>
 
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee-track">
-        <span>автоматизация</span><span>telegram‑боты</span><span>искусственный интеллект</span><span>онлайн‑запись</span>
-        <span>платежи</span><span>чат‑боты</span><span>python</span><span>aiogram</span>
-        <span>автоматизация</span><span>telegram‑боты</span><span>искусственный интеллект</span><span>онлайн‑запись</span>
-      </div>
-    </div>
-
-    <svg class="hero-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none">
-      <path fill="url(#waveGradient)" fill-opacity="1" d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
-      <defs>
-        <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0.25" />
-          <stop offset="100%" style="stop-color:#0ea5e9;stop-opacity:0.08" />
-        </linearGradient>
-      </defs>
-    </svg>
-  </section>
-
-  <section id="work" class="work" data-animate>
-    <div class="container">
-      <div class="section-head row between end">
-        <h2 class="section-title">Мои работы</h2>
-        <span class="section-note">Кейсы и проекты</span>
-      </div>
-      <div class="cases">
-        <div class="case" data-preview="#00d4ff" data-label="Telegram-бот для записи">
-          <button class="case-toggle" type="button" aria-expanded="false" aria-controls="case-1">
-            <div class="case-left">
-              <div class="case-title">Бот для записи на ресницы и бровки</div>
-              <div class="case-tags">Python · Aiogram · SQLite · Админ‑панель</div>
-            </div>
-            <div class="case-arrow" aria-hidden="true">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" focusable="false"><path d="M8.12 9.29a1 1 0 0 1 1.41 0L12 11.75l2.47-2.46a1 1 0 1 1 1.41 1.41l-3.18 3.18a1.5 1.5 0 0 1-2.12 0L8.12 10.7a1 1 0 0 1 0-1.41Z"/></svg>
-            </div>
-          </button>
-          <div class="case-extra" id="case-1" hidden>
-            <p>Бот с календарём, выбором услуг и времени, админ-панелью, предоплатой и автоматическими уведомлениями. Полная автоматизация для мастера красоты.</p>
-            <a class="btn btn-primary" href="my_project/bot-screenshot.jpg" data-transition="case">Подробнее о кейсе</a>
+    <!-- ПРОЕКТЫ -->
+    <section id="work">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">🔥 Реальные кейсы</span>
+          <h2>Что я уже сделал</h2>
+        </div>
+        <div class="projects-list">
+          <div class="project-card">
+            <div class="project-icon">📅</div>
+            <h3>Бот для записи на ресницы</h3>
+            <p>Календарь, выбор услуг, админ-панель, предоплата, уведомления. Полная автоматизация для мастера.</p>
+            <div class="project-tags">Python · Aiogram · SQLite</div>
+          </div>
+          <div class="project-card">
+            <div class="project-icon">🤖</div>
+            <h3>Бот-консультант с ChatGPT</h3>
+            <p>Отвечает на вопросы, помогает с выбором товара, оформляет заявки. Интеграция с OpenAI.</p>
+            <div class="project-tags">Python · Telebot · OpenAI API</div>
+          </div>
+          <div class="project-card">
+            <div class="project-icon">🛒</div>
+            <h3>Каталог с оплатой в Telegram</h3>
+            <p>Корзина, приём платежей через ЮKassa, статусы заказов. Готовый магазин в мессенджере.</p>
+            <div class="project-tags">Aiogram · SQLite · ЮKassa</div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="services" class="services" data-animate>
-    <div class="container">
-      <div class="section-head row between end">
-        <h2 class="section-title">Мои услуги</h2>
-        <span class="section-note">Что вы получите</span>
-      </div>
-      <div class="service-grid">
-        <div class="service">
-          <div class="service-head row between center">
-            <h3 class="service-title">Боты под любые задачи</h3>
-            <span class="service-index">01</span>
+    <!-- УСЛУГИ -->
+    <section id="services">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">💎 Что предлагаю</span>
+          <h2>Разрабатываю боты под любые задачи</h2>
+        </div>
+        <div class="services-grid">
+          <div class="service-item">
+            <div class="service-icon">🧩</div>
+            <h3>Онлайн-запись</h3>
+            <p>Календарь, услуги, уведомления, админка — полная автоматизация для сферы услуг.</p>
           </div>
-          <p class="service-text">Онлайн-запись, консультации с ИИ, каталоги с оплатой, уведомления, анкетирование. Автоматизирую процессы продаж.</p>
-        </div>
-        <div class="service">
-          <div class="service-head row between center">
-            <h3 class="service-title">Интеграции и админ‑панель</h3>
-            <span class="service-index">02</span>
+          <div class="service-item">
+            <div class="service-icon">🧠</div>
+            <h3>Искусственный интеллект</h3>
+            <p>Подключаю ChatGPT и другие нейросети для консультаций и генерации контента.</p>
           </div>
-          <p class="service-text">Подключаю ботов к базам данных, CRM, платежным системам, Google Sheets, ChatGPT и другим API. Сделаю понятную админ-панель.</p>
-        </div>
-        <div class="service">
-          <div class="service-head row between center">
-            <h3 class="service-title">Техподдержка и доработки</h3>
-            <span class="service-index">03</span>
+          <div class="service-item">
+            <div class="service-icon">💳</div>
+            <h3>Платежи и каталоги</h3>
+            <p>Приём оплаты, корзина, каталог товаров — интернет-магазин в Telegram под ключ.</p>
           </div>
-          <p class="service-text">Помогаю с уже готовыми ботами: исправляю ошибки, добавляю новый функционал, настраиваю производительность.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="about" class="about" data-animate>
-    <div class="container two-col">
-      <div class="about-col">
-        <h2 class="section-title">Мой подход к работе</h2>
-        <p>Я Тимофей, создаю Telegram-ботов, которые реально помогают бизнесу. Моя цель — не просто написать код, а сделать инструмент, который будет приносить пользу: экономить время, привлекать клиентов, автоматизировать продажи.</p>
-        <p>Перед началом работы погружаюсь в задачу, предлагаю варианты. Работаю прозрачно: от обсуждения до запуска, тестирования и поддержки.</p>
-      </div>
-      <div class="about-col about-card">
-        <div class="about-stat">
-          <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M10 4h4a2 2 0 0 1 2 2v1h2.5A1.5 1.5 0 0 1 20 8.5v9A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5v-9A1.5 1.5 0 0 1 5.5 7H8V6a2 2 0 0 1 2-2Zm0 3h4V6h-4v1Z"/></svg></div>
-          <div class="num">10+</div>
-          <div class="label">Успешных проектов</div>
-        </div>
-        <div class="about-stat">
-          <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2a1 1 0 0 0-1 1v1H4a2 2 0 0 0-2 2v2h20V6a2 2 0 0 0-2-2h-1V3a1 1 0 1 0-2 0v1H7V3a1 1 0 0 0-1-1ZM22 10H2v8a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-8Z"/></svg></div>
-          <div class="num">1 год</div>
-          <div class="label">Активной разработки</div>
-        </div>
-        <div class="about-stat">
-          <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Z"/></svg></div>
-          <div class="num">24/7</div>
-          <div class="label">Готовность на связи</div>
+    <!-- ОБО МНЕ -->
+    <section id="about">
+      <div class="container">
+        <div class="about-block">
+          <div class="about-text">
+            <span class="badge">👋 Короче</span>
+            <h2>Я Тимофей, делаю ботов, которые работают</h2>
+            <p>Берусь за задачи, которые другим кажутся сложными. Работаю быстро, душой и с поддержкой после запуска.</p>
+            <p>Моя цель — не просто код, а инструмент, который помогает вашему бизнесу расти.</p>
+          </div>
+          <div class="about-stats">
+            <div><span class="stat-num">10+</span> проектов</div>
+            <div><span class="stat-num">24/7</span> на связи</div>
+            <div><span class="stat-num">100%</span> запусков</div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="contact" class="contact" data-animate>
-    <div class="container">
-      <div class="contact-card">
-        <h2 class="section-title">Давайте обсудим вашего бота?</h2>
-        <p>Расскажите о своей задаче, и я предложу решение, оценю сроки и стоимость. Отвечаю быстро.</p>
-        <div class="contact-actions row">
-          <a class="btn btn-primary" target="_blank" href="https://t.me/timofey_bot_developer">Написать в Telegram</a>
-          <a class="btn btn-ghost" href="mailto:timofey@example.com">Написать на почту</a>
+    <!-- КОНТАКТЫ -->
+    <section id="contact">
+      <div class="container">
+        <div class="contact-block">
+          <h2>Давайте сделаем вашего бота?</h2>
+          <p>Расскажите о задаче — я оценю сроки и стоимость. Отвечаю быстро.</p>
+          <div class="contact-links">
+            <a href="https://t.me/panda_creator1" class="btn btn-primary" target="_blank">Написать в Telegram</a>
+            <a href="mailto:buot9875@gmail.com" class="btn btn-outline">Написать на почту</a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <div class="page-transition" aria-hidden="true"></div>
+    </section>
+  </main>
 
   <footer class="footer">
-    <div class="container row between center">
-      <div class="brand tiny">T</div>
-      <div class="foot-note">© 2026 — Тимофей. Разработка Telegram-ботов</div>
+    <div class="container">
+      <p>© 2026 — Тимофей. Разработка Telegram-ботов</p>
     </div>
   </footer>
 
-  <button class="back-to-top" aria-label="Наверх" hidden>
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41Z" fill="currentColor"/></svg>
-  </button>
-
-  <script src="script.js" defer></script>
-  <script>
-    (function(){
-      const btn = document.querySelector('.back-to-top');
-      if (!btn) return;
-      function onScroll(){
-        const y = window.scrollY;
-        if (y > 400) { btn.hidden = false; btn.classList.add('is-visible'); }
-        else { btn.classList.remove('is-visible'); btn.hidden = true; }
-      }
-      window.addEventListener('scroll', onScroll, { passive: true });
-      onScroll();
-      btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-    })();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
