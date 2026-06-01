@@ -5,7 +5,7 @@
 
 
 взято за основу у Сабира:
-## 📞 Контакты
+## 📞 Контакты у сабира
 
 - **Email**: sabir.dev@example.com
 - **Telegram**: [@sabirbiy](https://t.me/sabirbiy)  
@@ -16,7 +16,7 @@
 
 
 
-## 📞 Контакты
+## 📞 Мои онтакты:
 
 - **Email**: buot9875@gmail.com
 - **Telegram**: [@panda_creator1](https://t.me/panda_creator1)
