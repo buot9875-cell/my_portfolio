@@ -321,38 +321,4 @@ window.addEventListener('DOMContentLoaded', () => {
      navigateWithTransition(link.href)
    })
  })
-// АНИМАЦИЯ ЦИФР В СТАТИСТИКЕ (исправленная)
-const statNumbers = document.querySelectorAll('.about-stat .num');
-if (statNumbers.length) {
-  const animateNumber = (el) => {
-    // получаем целевое число из текста (убираем всё, кроме цифр)
-    const target = parseInt(el.innerText.replace(/[^0-9]/g, ''));
-    if (isNaN(target)) return;
-    let current = 0;
-    const steps = 60; // плавность
-    const increment = target / steps;
-    const updateNumber = () => {
-      current += increment;
-      if (current < target) {
-        el.innerText = Math.ceil(current);
-        requestAnimationFrame(updateNumber);
-      } else {
-        el.innerText = target;
-        el.classList.add('animated');
-      }
-    };
-    updateNumber();
-  };
-
-  const observerStats = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        animateNumber(entry.target);
-        observerStats.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.3 });
-
-  statNumbers.forEach(num => observerStats.observe(num));
-}
 })
