@@ -321,33 +321,38 @@ window.addEventListener('DOMContentLoaded', () => {
      navigateWithTransition(link.href)
    })
  })
-  // Анимация цифр в статистике
+// АНИМАЦИЯ ЦИФР В СТАТИСТИКЕ (исправленная)
 const statNumbers = document.querySelectorAll('.about-stat .num');
-const animateNumber = (el) => {
-  const target = parseInt(el.innerText);
-  let current = 0;
-  const increment = target / 20;
-  const updateNumber = () => {
-    current += increment;
-    if (current < target) {
-      el.innerText = Math.ceil(current);
-      requestAnimationFrame(updateNumber);
-    } else {
-      el.innerText = target;
-    }
+if (statNumbers.length) {
+  const animateNumber = (el) => {
+    // получаем целевое число из текста (убираем всё, кроме цифр)
+    const target = parseInt(el.innerText.replace(/[^0-9]/g, ''));
+    if (isNaN(target)) return;
+    let current = 0;
+    const steps = 60; // плавность
+    const increment = target / steps;
+    const updateNumber = () => {
+      current += increment;
+      if (current < target) {
+        el.innerText = Math.ceil(current);
+        requestAnimationFrame(updateNumber);
+      } else {
+        el.innerText = target;
+        el.classList.add('animated');
+      }
+    };
+    updateNumber();
   };
-  updateNumber();
-};
 
-const observerStats = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const numEl = entry.target;
-      animateNumber(numEl);
-      observerStats.unobserve(numEl);
-    }
-  });
-}, { threshold: 0.5 });
+  const observerStats = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateNumber(entry.target);
+        observerStats.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
 
-statNumbers.forEach(num => observerStats.observe(num));
+  statNumbers.forEach(num => observerStats.observe(num));
+}
 })
